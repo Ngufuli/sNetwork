@@ -6,8 +6,10 @@ const profile = require("./routes/api/profile");
 const posts = require("./routes/api/posts");
 
 const app = express();
+
 //DB Configuration
 const db = require("./config/keys").mongoURI;
+
 //Connecting to MongoDB
 mongoose
   .connect(db)
