@@ -26,6 +26,9 @@ router.get("/test", (req, res) =>
 //@access Public
 
 router.post("/register", (req, res) => {
+  //validation
+  const { errors, isValid } = validateRegisterInput(req.body);
+
   User.findOne({ email: req.body.email }).then(user => {
     if (user) {
       return res.status(400).json({ email: "Email already exists" });
