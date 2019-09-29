@@ -8,6 +8,7 @@ const router = express.Router();
 
 //load input validations
 const validateRegisterInput = require("../../validation/register");
+const validateLoginInput = require("../../validation/login");
 
 //load user models
 const User = require("../../models/User");
@@ -69,13 +70,21 @@ router.post("/register", (req, res) => {
 //@Description  Login/ Returning JWT Token
 //@access       Public
 router.post("/login", (req, res) => {
+  //validation
+  const { errors, isValid } = validateLoginInput(req.body);
+  //Check validation
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
   const email = req.body.email;
   const password = req.body.password;
 
   //Finding the user by email
   User.findOne({ email }).then(user => {
+    errors.email = "Email not found";
     if (!user) {
-      return res.status(404).json({ email: "User not found" });
+      return res.status(404).json(errors);
     }
     //Checking the password------/remember the bcrypt encryption
     bcrypt.compare(password, user.password).then(isMatch => {
@@ -96,7 +105,8 @@ router.post("/login", (req, res) => {
           }
         );
       } else {
-        return res.status(400).json({ password: "Password incorrect" });
+        errors.password = "Password incorrect!";
+        return res.status(400).json(errors);
       }
     });
   });
