@@ -18,4 +18,8 @@ router.get("/test", (req, res) =>
   })
 );
 
+//@route GET api/profile/
+//@desc  Test profile route
+//@access
+
 module.exports = router;
