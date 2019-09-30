@@ -67,16 +67,17 @@ const ProfileSchema = new Schema({
   ],
   education: [
     {
-      title: {
+      school: {
         type: String,
         required: true
       },
-      company: {
+      degree: {
         type: String,
         required: true
       },
-      location: {
-        type: String
+      fieldofstudy: {
+        type: String,
+        required: true
       },
       from: {
         type: Date,
@@ -94,5 +95,28 @@ const ProfileSchema = new Schema({
         type: String
       }
     }
-  ]
+  ],
+  social: {
+    youtube: {
+      type: String
+    },
+    twitter: {
+      type: String
+    },
+    facebook: {
+      type: String
+    },
+    linkedin: {
+      type: String
+    },
+    instagram: {
+      type: String
+    }
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  }
 });
+
+module.exports = Profile = mongoose.model("profile", ProfileSchema);
