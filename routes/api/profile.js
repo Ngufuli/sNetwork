@@ -64,7 +64,12 @@ router.post(
         //Create
 
         //Check to see if the handle exists
-        Profile.findOne({ handle: profileFields.handle }).then();
+        Profile.findOne({ handle: profileFields.handle }).then(profile => {
+          if (profile) {
+            errors.handle = "That handle already exists";
+            res.status(400).json(errors);
+          }
+        });
       }
     });
   }
