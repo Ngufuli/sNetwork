@@ -18,8 +18,8 @@ router.get("/test", (req, res) =>
   })
 );
 
-//@route GET api/profile/
-//@desc  Get current user's profile
+//@route POST api/profile/
+//@desc  Create user profile
 //@access Private
 router.get(
   "/",
