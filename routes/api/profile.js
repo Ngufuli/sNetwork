@@ -30,7 +30,7 @@ router.get(
     Profile.findOne({ user: req.user.id })
       .then(profile => {
         if (!profile) {
-          errors.noprfile = "There is no profile for this user";
+          errors.noprofile = "There is no profile for this user";
           return res.status(400).json(errors);
         }
         res.json(profile);
