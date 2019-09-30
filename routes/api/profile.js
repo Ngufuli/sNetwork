@@ -21,7 +21,7 @@ router.get("/test", (req, res) =>
 //@route POST api/profile/
 //@desc  Create user profile
 //@access Private
-router.get(
+router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
