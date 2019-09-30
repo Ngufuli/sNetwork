@@ -19,7 +19,7 @@ router.get("/test", (req, res) =>
 );
 
 //@route POST api/profile/
-//@desc  Create user profile
+//@desc  Create or edit user profile
 //@access Private
 router.post(
   "/",
@@ -44,11 +44,29 @@ router.post(
 
     //Social
     profileFields.social = {};
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.handle) profileFields.handle = req.body.handle;
-    if (req.body.handle) profileFields.handle = req.body.handle;
+    if (req.body.youtube) profileFields.social.youtube = req.body.youtube;
+    if (req.body.twitter) profileFields.social.twitter = req.body.twitter;
+    if (req.body.facebook) profileFields.social.facebook = req.body.facebook;
+    if (req.body.github) profileFields.social.github = req.body.github;
+    if (req.body.instagram) profileFields.social.instagram = req.body.instagram;
+
+    Profile.findOne({ user: req.user.id }).then(profile => {
+      if (profile) {
+        //update
+        Profile.findOneAndUpdate(
+          { user: req.user.id },
+          { $set: profileFields },
+          { new: true }
+        ).then(profile => {
+          res.json(profile);
+        });
+      } else {
+        //Create
+
+        //Check to see if the handle exists
+        Profile.findOne({ handle: profileFields.handle }).then();
+      }
+    });
   }
 );
 
