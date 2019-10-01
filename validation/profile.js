@@ -15,8 +15,12 @@ module.exports = function validateProfileInput(data) {
     errors.handle = "Profile handle is required";
   }
   if (Validator.isEmpty(data.status)) {
-    errors.status = "Profile handle is required";
+    errors.status = "Status field is required";
   }
+  if (Validator.isEmpty(data.skills)) {
+    errors.skills = "Skills field is required";
+  }
+
   return {
     errors,
     isValid: isEmpty(errors)
