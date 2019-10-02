@@ -161,17 +161,22 @@ router.post(
   "/experience",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
-    const errors = {};
-    Profile.findOne({ handle: req.params.handle })
-      .populate("user", ["name", "avatar"])
-      .then(profile => {
-        if (!profile) {
-          errors.noprofile = "There is no profile for this user.";
-          res.status(404).json(errors);
-        }
-        res.json(profile);
-      })
-      .catch(err => res.status(404).json(err));
+    // const error = {};
+    Profile.findOne({ user: req.user.id }).then(profile => {
+      const newExp = {
+        title: req.body.title,
+        company: req.body.company,
+        location: req.body.location,
+        from: req.body.from,
+        to: req.body.to,
+        current: req.body.current,
+        description: req.body.description
+      };
+      //Add to the experience array
+      profile.experience.unshift(newExp);
+
+      profile.save().then(profile => res.json(profile));
+    });
   }
 );
 
