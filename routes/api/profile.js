@@ -46,7 +46,8 @@ router.get("/handle/:handle", (req, res) => {
         res.status(404).json(errors);
       }
       res.json(profile);
-    });
+    })
+    .catch(err => res.status(404).json(err));
 });
 
 //@route POST api/profile/
