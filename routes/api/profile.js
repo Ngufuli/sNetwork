@@ -20,8 +20,8 @@ router.get(
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     const errors = {};
-    profile
-      .findOne({ user: req.user.id })
+    Profile.findOne({ user: req.user.id })
+      .populate("user", ["name", "avatar"])
       .then(profile => {
         if (!profile) {
           errors.noprofile = "There is no profile for this user";
@@ -32,6 +32,11 @@ router.get(
       .catch(err => res.status(400).json(err));
   }
 );
+
+//@route GET api/profile/handle/:handle
+//@desc  Get profile by handle
+//@access Public
+router.get("/handle/:handle", (req, res) => {});
 
 //@route POST api/profile/
 //@desc  Create or edit user profile
