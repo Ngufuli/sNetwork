@@ -33,6 +33,10 @@ router.get(
   }
 );
 
+//@route GET api/profile/handle/all
+//@desc  Get all profiles
+//@access Public
+
 //@route GET api/profile/handle/:handle
 //@desc  Get profile by handle
 //@access Public
