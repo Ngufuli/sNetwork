@@ -6,6 +6,7 @@ const router = express.Router();
 //Load Validation
 const validateProfileInput = require("../../validation/profile");
 const validateExperienceInput = require("../../validation/experience");
+const validateEducationInput = require("../../validation/education");
 
 //Load Profile model
 const Profile = require("../../models/Profile");
@@ -212,11 +213,45 @@ router.post(
         description: req.body.description
       };
       //Add to the experience array
-      profile.experience.unshift(newEdu);
+      profile.education.unshift(newEdu);
 
       profile.save().then(profile => res.json(profile));
     });
   }
 );
+
+
+//@route DELETE api/profile/experience/:exp_id
+//@desc  Delete experirience from profile
+//@access Private
+router.post(
+  "/experience/:exp_id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validateEducationInput(req.body);
+
+    //Checking the validation
+    if (!isValid) {
+      //Return any errors with 400 status
+      return res.status(400).json(errors);
+    }
+    Profile.findOne({ user: req.user.id }).then(profile => {
+      const newEdu = {
+        school: req.body.school,
+        degree: req.body.degree,
+        fieldofstudy: req.body.fieldofstudy,
+        from: req.body.from,
+        to: req.body.to,
+        current: req.body.current,
+        description: req.body.description
+      };
+      //Add to the experience array
+      profile.education.unshift(newEdu);
+
+      profile.save().then(profile => res.json(profile));
+    });
+  }
+);
+
 
 module.exports = router;
