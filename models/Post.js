@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 //Creating the post schema
-const profileSchema = new Schema({
+const postSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: "users"
@@ -40,7 +40,18 @@ const profileSchema = new Schema({
       },
       avatar: {
         type: String
+      },
+      date: {
+        type: Date,
+        default: Date.now
       }
     }
-  ]
+  ],
+  date: {
+    type: Date,
+    default: Date.now
+  }
 });
+
+//exporting
+module.exports = Post = mongoose.model("post", postSchema);
