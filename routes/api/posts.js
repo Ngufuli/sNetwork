@@ -89,7 +89,7 @@ router.delete(
 //@desc  Like posts
 //@access Private
 router.post(
-  "like/:id",
+  "/like/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
     Profile.findOne({ user: req.user.id }).then(profile => {
