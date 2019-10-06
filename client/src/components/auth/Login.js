@@ -29,7 +29,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div class="login">
+      <div className="login">
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
