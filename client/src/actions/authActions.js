@@ -13,3 +13,11 @@ export const registerUser = (userData, history) => dispatch => {
       })
     );
 };
+
+//Login GET user token
+export const loginUser = userData => dispatch => {
+  axios
+    .post("/api/users/login", userData)
+    .then(res => {})
+    .catch(err => {});
+};
