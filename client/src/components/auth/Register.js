@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import classnames from "classnames";
+import { connect } from "react-redux";
 
 class Register extends Component {
   constructor() {
