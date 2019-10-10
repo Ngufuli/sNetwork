@@ -19,7 +19,8 @@ import Register from "./components/auth/Register";
 if (localStorage.jwtToken) {
   //Set auth token header auth
   setAuthToken(localStorage.jwtToken);
-  //Decode the token
+  //Decode the token and get user info and expiration
+  const decoded = jwt_decode(localStorage.jwtToken);
 }
 
 class App extends React.Component() {
