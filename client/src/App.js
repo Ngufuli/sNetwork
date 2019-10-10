@@ -21,6 +21,8 @@ if (localStorage.jwtToken) {
   setAuthToken(localStorage.jwtToken);
   //Decode the token and get user info and expiration
   const decoded = jwt_decode(localStorage.jwtToken);
+  //Set user and isAuthenticated
+  store.dispatch(setCurrentUser(decoded));
 }
 
 class App extends React.Component() {
