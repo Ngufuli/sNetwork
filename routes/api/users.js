@@ -82,7 +82,7 @@ router.post("/login", (req, res) => {
 
   //Finding the user by email
   User.findOne({ email }).then(user => {
-    errors.email = "Email not found";
+    errors.email = "User not found";
     if (!user) {
       return res.status(404).json(errors);
     }
@@ -96,7 +96,7 @@ router.post("/login", (req, res) => {
         jwt.sign(
           payload,
           keys.secretOrKey,
-          { expiresIn: 3600 },
+          { expiresIn: 1800 },
           (err, token) => {
             res.json({
               success: true,
