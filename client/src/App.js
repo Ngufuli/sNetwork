@@ -25,24 +25,22 @@ if (localStorage.jwtToken) {
   store.dispatch(setCurrentUser(decoded));
 }
 
-class App extends React.Component() {
-  render() {
-    return (
-      <Provider store={store}>
-        <Router>
-          <div className="App">
-            <Navbar />
-            <Route exact path="/" component={Landing} />
-            <div className="container">
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-            </div>
-            <Footer />
+function App() {
+  return (
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Route exact path="/" component={Landing} />
+          <div className="container">
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
           </div>
-        </Router>
-      </Provider>
-    );
-  }
+          <Footer />
+        </div>
+      </Router>
+    </Provider>
+  );
 }
 
 export default App;
