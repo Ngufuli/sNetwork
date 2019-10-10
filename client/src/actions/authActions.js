@@ -47,3 +47,4 @@ export const setCurrentUser = decoded => {
     payload: decoded
   };
 };
+//Log user out
