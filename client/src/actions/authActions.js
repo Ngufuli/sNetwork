@@ -48,3 +48,7 @@ export const setCurrentUser = decoded => {
   };
 };
 //Log user out
+export const logoutUser = () => dispatch => {
+  //Romove the token from local storage
+  localStorage.removeItem("jwtToken");
+};
