@@ -15,6 +15,13 @@ import Landing from "./components/layout/Landing";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 
+//Checking for token
+if (localStorage.jwtToken) {
+  //Set auth token header auth
+  setAuthToken(localStorage.jwtToken);
+  //Decode the token
+}
+
 class App extends React.Component() {
   render() {
     return (
