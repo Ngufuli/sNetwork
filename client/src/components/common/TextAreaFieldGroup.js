@@ -40,4 +40,4 @@ TextFieldGroup.propTypes = {
   disabled: PropTypes.string
 };
 
-export default TextFieldGroup;
+export default TextAreaFieldGroup;
