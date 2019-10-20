@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import TextFieldGroup from "../common/TextFieldGroup";
 
 class CreateProfile extends Component {
   constructor(props) {
@@ -25,7 +26,21 @@ class CreateProfile extends Component {
   }
 
   render() {
-    return <div></div>;
+    return (
+      <div className="create-profile">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8 m-auto">
+              <h1 className="display-4 text-center">Create Your Profile</h1>
+              <p className="lead text-center">
+                Let's get some information to make y
+              </p>
+              <small className="d-block pb-3">* = required fields</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 
