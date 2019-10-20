@@ -31,7 +31,7 @@ class CreateProfile extends Component {
 
 CreateProfile.propTypes = {
   profile: PropTypes.object.isRequired,
-  errors: state.errors
+  errors: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
