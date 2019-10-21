@@ -37,4 +37,4 @@ TextFieldGroup.propTypes = {
   onChange: PropTypes.func.isRequired
 };
 
-export default TextAreaFieldGroup;
+export default SelectListGroup;
