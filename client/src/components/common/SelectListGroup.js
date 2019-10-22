@@ -11,6 +11,12 @@ const SelectListGroup = ({
   onChange,
   options
 }) => {
+  const selectOptions = options.map(options => (
+    <option key={option.label} value={option.value}>
+      {option.label}
+    </option>
+  ));
+
   return (
     <div className="form-group">
       <textarea
