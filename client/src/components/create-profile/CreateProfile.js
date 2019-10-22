@@ -50,7 +50,7 @@ class CreateProfile extends Component {
       { label: "Junior Developer", value: "Junior Developer" },
       { label: "Senior Developer", value: "Senior Developer" },
       { label: "Manager", value: "Mananger" },
-      { label: "Studend or Learning", value: "Student or Learning" },
+      { label: "Student or Learning", value: "Student or Learning" },
       { label: "Instructor or Teacher", value: "Instructor or Teacher" },
       { label: "Intern", value: "Intern" },
       { label: "Other", value: "Other" }
@@ -74,6 +74,15 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   error={errors.handle}
                   info="A unique handle for your profile URL. Your full name, company name, nickname, etc."
+                />
+                <SelectListGroup
+                  placeholder="Status"
+                  name="status"
+                  value={this.state.status}
+                  onChange={this.onChange}
+                  options={options}
+                  error={errors.status}
+                  info="Provide us an idea about your career."
                 />
               </form>
             </div>
