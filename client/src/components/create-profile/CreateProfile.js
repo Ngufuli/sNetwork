@@ -29,6 +29,7 @@ class CreateProfile extends Component {
   }
 
   render() {
+    const { errors } = this.state;
     return (
       <div className="create-profile">
         <div className="container">
@@ -46,7 +47,7 @@ class CreateProfile extends Component {
                   value={this.state.handle}
                   onChange={this.onChange}
                   error={errors.handle}
-                  info="A unique handle for your profile URL. Your full name, company name, nickname, etc (This CAN'T be changed later)"
+                  info="A unique handle for your profile URL. Your full name, company name, nickname, etc."
                 />
               </form>
             </div>
