@@ -28,13 +28,14 @@ const SelectListGroup = ({
   );
 };
 
-TextFieldGroup.propTypes = {
+SelectListGroup.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
   info: PropTypes.string,
   error: PropTypes.string,
-  onChange: PropTypes.func.isRequired
+  onChange: PropTypes.func.isRequired,
+  options: PropTypes.array.isRequired
 };
 
 export default SelectListGroup;
