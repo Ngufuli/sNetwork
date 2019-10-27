@@ -43,6 +43,13 @@ class AddExperience extends Component {
                   onChange={this.onChange}
                   error={errors.company}
                 />
+                <TextFieldGroup
+                  placeholder="* Job Title"
+                  name="title"
+                  value={this.state.title}
+                  onChange={this.onChange}
+                  error={errors.title}
+                />
               </form>
             </div>
           </div>
