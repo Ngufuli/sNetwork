@@ -4,9 +4,9 @@ import TextFieldGroup from "../common/TextFieldGroup";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { addExperience } from "../../actions/profileActions";
+import { addEducation } from "../../actions/profileActions";
 
-class AddExperience extends Component {
+class AddEducation extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -162,4 +162,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { addExperience }
-)(withRouter(AddExperience));
+)(withRouter(AddEducation));
