@@ -90,11 +90,11 @@ class AddEducation extends Component {
                   error={errors.degree}
                 />
                 <TextFieldGroup
-                  placeholder="Location"
-                  name="location"
-                  value={this.state.location}
+                  placeholder="Field of study"
+                  name="fieldofstudy"
+                  value={this.state.fieldofstudy}
                   onChange={this.onChange}
-                  error={errors.location}
+                  error={errors.fieldofstudy}
                 />
                 <h6>From Date</h6>
                 <TextFieldGroup
