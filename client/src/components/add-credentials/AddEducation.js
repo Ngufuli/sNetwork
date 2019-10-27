@@ -34,7 +34,7 @@ class AddEducation extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    const expData = {
+    const eduData = {
       school: this.state.school,
       degree: this.state.degree,
       fieldofstudy: this.state.fieldofstudy,
@@ -44,7 +44,7 @@ class AddEducation extends Component {
       description: this.state.description
     };
 
-    this.props.addExperience(expData, this.props.history);
+    this.props.addEducation(eduData, this.props.history);
   }
   onChange(e) {
     this.setState({
