@@ -21,7 +21,8 @@ class AddExperience extends Component {
     };
   }
   render() {
-    return <div></div>;
+    const { errors } = this.state;
+    return <div className=""></div>;
   }
 }
 
