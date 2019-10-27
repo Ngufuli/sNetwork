@@ -10,9 +10,9 @@ class AddEducation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      company: "",
-      title: "",
-      location: "",
+      school: "",
+      degree: "",
+      fieldofstudy: "",
       from: "",
       to: "",
       current: false,
