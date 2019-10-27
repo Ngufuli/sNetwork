@@ -25,6 +25,12 @@ class AddExperience extends Component {
     this.onChange = this.onChange.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
   onSubmit(e) {
     e.preventDefault();
 
