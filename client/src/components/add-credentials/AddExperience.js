@@ -57,6 +57,14 @@ class AddExperience extends Component {
                   onChange={this.onChange}
                   error={errors.location}
                 />
+                <h6>From Date</h6>
+                <TextFieldGroup
+                  name="from"
+                  type="date"
+                  value={this.state.from}
+                  onChange={this.onChange}
+                  error={errors.from}
+                />
               </form>
             </div>
           </div>
