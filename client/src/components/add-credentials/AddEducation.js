@@ -35,9 +35,9 @@ class AddEducation extends Component {
     e.preventDefault();
 
     const expData = {
-      company: this.state.company,
-      title: this.state.title,
-      location: this.state.location,
+      school: this.state.school,
+      degree: this.state.degree,
+      fieldofstudy: this.state.fieldofstudy,
       from: this.state.from,
       to: this.state.to,
       current: this.state.current,
