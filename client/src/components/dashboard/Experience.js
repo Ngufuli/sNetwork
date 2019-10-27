@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
+import Moment from "react-moment";
 
 class Experience extends Component {
   render() {
@@ -10,7 +11,9 @@ class Experience extends Component {
         <td>{exp.company}</td>
         <td>{exp.title}</td>
         <td>
-          {exp.from} - {exp.to}
+          <Moment format="YYYY/MM/DD">
+            {exp.from} - {exp - to}
+          </Moment>
         </td>
         <td>
           <button className="btn btn-danger">Delete</button>
@@ -29,10 +32,11 @@ class Experience extends Component {
               <td>Years</td>
             </tr>
           </thead>
+          <tbody>{experience}</tbody>
         </table>
       </div>
     );
   }
 }
 
-export default Experience;
+export default connect(null)(withRouter(Experience));
