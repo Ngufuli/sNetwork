@@ -19,6 +19,9 @@ class AddExperience extends Component {
       errors: {},
       disabled: false
     };
+    this.onCheck = this.onCheck.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
   render() {
     const { errors } = this.state;
