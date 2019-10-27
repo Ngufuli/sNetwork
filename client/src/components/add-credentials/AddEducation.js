@@ -83,11 +83,11 @@ class AddEducation extends Component {
                   error={errors.school}
                 />
                 <TextFieldGroup
-                  placeholder="* Job Title"
-                  name="title"
-                  value={this.state.title}
+                  placeholder="* Degree or Certification"
+                  name="degree"
+                  value={this.state.degree}
                   onChange={this.onChange}
-                  error={errors.title}
+                  error={errors.degree}
                 />
                 <TextFieldGroup
                   placeholder="Location"
