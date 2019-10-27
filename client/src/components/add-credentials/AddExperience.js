@@ -88,6 +88,14 @@ class AddExperience extends Component {
                     Current Job
                   </label>
                 </div>
+                <TextFieldGroup
+                  name="Job Description"
+                  type="description"
+                  value={this.state.description}
+                  onChange={this.onChange}
+                  error={errors.description}
+                  info="Tell us about the position"
+                />
               </form>
             </div>
           </div>
