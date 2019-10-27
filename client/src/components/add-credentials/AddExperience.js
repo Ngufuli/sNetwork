@@ -25,4 +25,9 @@ class AddExperience extends Component {
   }
 }
 
-export default AddExperience;
+const mapStateToProps = state => ({
+  profile: state.profile,
+  errors: state.errors
+});
+
+export default connect(mapStateToProps)(withRouter(AddExperience));
