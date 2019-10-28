@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+
 import Moment from "react-moment";
 import { deleteExperience } from "../../actions/profileActions";
 
 class Experience extends Component {
   onDeleteClick(id) {
-    this.props.deleteExperience(id, this.props.history);
+    this.props.deleteExperience(id);
   }
 
   render() {
