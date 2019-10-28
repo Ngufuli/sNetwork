@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Spinner from "../common/Spinner";
+import { getProfiles } from "../../actions/profileActions";
 
 class Profiles extends Component {
   render() {
@@ -9,4 +10,4 @@ class Profiles extends Component {
   }
 }
 
-export default Profiles;
+export default connect()(Profiles);
