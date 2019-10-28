@@ -10,4 +10,11 @@ class Profiles extends Component {
   }
 }
 
-export default connect()(Profiles);
+const mapStateToProps = state => ({
+  profile: state.profile
+});
+
+export default connect(
+  null,
+  { getProfiles }
+)(Profiles);
