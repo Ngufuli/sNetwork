@@ -20,9 +20,10 @@ class AddEducation extends Component {
       errors: {},
       disabled: false
     };
-    this.onCheck = this.onCheck.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+
     this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onCheck = this.onCheck.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -46,11 +47,11 @@ class AddEducation extends Component {
 
     this.props.addEducation(eduData, this.props.history);
   }
+
   onChange(e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
+    this.setState({ [e.target.name]: e.target.value });
   }
+
   onCheck(e) {
     this.setState({
       disabled: !this.state.disabled,
@@ -60,6 +61,7 @@ class AddEducation extends Component {
 
   render() {
     const { errors } = this.state;
+
     return (
       <div className="add-education">
         <div className="container">
@@ -70,10 +72,9 @@ class AddEducation extends Component {
               </Link>
               <h1 className="display-4 text-center">Add Education</h1>
               <p className="lead text-center">
-                Add any school, college, university, bootcamp or training that
-                you have attended.
+                Add any school, bootcamp, etc that you have attended
               </p>
-              <small className="d-block pb-3">* = required field</small>
+              <small className="d-block pb-3">* = required fields</small>
               <form onSubmit={this.onSubmit}>
                 <TextFieldGroup
                   placeholder="* School"
@@ -90,7 +91,7 @@ class AddEducation extends Component {
                   error={errors.degree}
                 />
                 <TextFieldGroup
-                  placeholder="* Field of study"
+                  placeholder="* Field of Study"
                   name="fieldofstudy"
                   value={this.state.fieldofstudy}
                   onChange={this.onChange}
@@ -128,12 +129,12 @@ class AddEducation extends Component {
                   </label>
                 </div>
                 <TextAreaFieldGroup
-                  placeholder="Program description"
+                  placeholder="Program Description"
                   name="description"
                   value={this.state.description}
                   onChange={this.onChange}
                   error={errors.description}
-                  info="Tell us about the program than you were in"
+                  info="Tell us about the program that you were in"
                 />
                 <input
                   type="submit"
